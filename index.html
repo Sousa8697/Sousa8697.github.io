@@ -1,1 +1,124 @@
-Hello World
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Carlos Sousa</title>
+        <style>
+          body{
+              font-family: arial, sans-serif;
+              text-align: center;
+              background-color:lightblue;
+
+          }
+          .main-content {
+              display: block;
+              margin-top: 15%;
+          }
+          .personal p {
+              display: inline-block;
+              font-size: 13pt;
+              width: 35em;
+          }
+          #personalPic {
+              width: 23em;
+              height: 25em;
+              float: center;
+              border-radius: 50%;
+
+          }
+          .main-content > .links > a {
+              padding: 3em;
+              text-decoration: none;
+              color: black;
+          }
+          a:hover{
+              color:white;
+          }
+          .project-content {
+              display: none;
+          }
+          .navigation{
+              display: flex;
+              margin: 2%;
+              color: black;
+              text-decoration: none;
+          }
+          .navigation:hover{
+              color: white;
+          }
+          .project-item{
+              margin:  0 auto;
+              width: 45em;
+          }
+          .image-group > img{
+              display: inline-block;
+              width: 47.5%;
+              height: 50%;
+          }
+          .project-item > img{
+              width: 100%;
+              height: 80%;
+          }
+          .project-info > a{
+              text-decoration: none;
+              color: black;
+          }
+          .project-info > a:hover{
+              color: white;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="main-content">
+            <div class="images">
+                <img src=/images/personalpic.jpeg id="personalPic" alt="Personal Picture"/>
+            </div>
+            <div class="personal">
+                <h1 id="name">Carlos Sousa</h1>
+                <p>I'm a computer science student at Bridgewater State University. I am interested in software development, computer architecture and web development.</p>
+            </div>
+            <div class="links">
+                <a href="https://github.com/Sousa8697" id="github" target="_blank">Github</a>
+                <a href="CarlosSousaResume.pdf" id="resume" target="_blank">Resume</a>
+                <a href="https://www.linkedin.com/in/carlos-sousa-665baa180/" id="linkedin" target="_blank">LinkedIn</a>
+                <a href="#" onclick="showProjects()">Projects</a>
+            </div>
+        </div>
+        <div class="project-content">
+            <a class="navigation" href="#" onclick="showProjects()" >Back</a>
+            <div class="projects">
+                <div class="project-item">
+                    <h3>Town of Dudley Website</h3>
+                    <p class="project-info">This is a dynamic web application developed for the Town of Dudley in HTML5, CSS3, JavaScript, jQuery, Python and Django. This web application was designed with features that solved common issues with the town's current website. This application allows the respective local government offices to post news, events and documents to their departments web pages. This application is served by Heroku and uses other 3rd party technology such as AWS S3 and Cloudflare for storage and security. The website can be found <a href="https://dth-web-app.herokuapp.com/">here</a>, if you are a recruiter looking to review the source code please contact me.</p>
+                    <img src="images/TownOfDudleyWebsite.PNG" alt="Town of Dudley Website"/>
+                </div>
+                <div class="project-item">
+                    <h3>Budgeting Application</h3>
+                    <p class="project-info">This is a budgeting application using Java, Java Swing and SQL built for my introduction to database management class. This application allows you to add pay periods, payments to those pay periods, search for specific pay periods and payments in during that pay period, and delete any pay periods or payments. More info can be found on GitHub <a href="https://github.com/Sousa8697/Budget-Application">here</a>.</p>
+                    <div class="image-group">
+                        <img style="display:inline-block" src="images/addPayPeriod.PNG" />
+                        <img src="images/addPayments.PNG" />
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3>Task Board Website</h3>
+                    <p class="project-info">This is a Task Board web application developed using HTML5, CSS3, JS, Python, and Django. This application was developed to enhance our knowledge on software engineering topics and to demonstrate how these concepts are used in the industry. I was in charge of the back end of the web application but helped a good amount on the front end as well. More info can be found on GitHub <a href="https://github.com/Sousa8697/SoftEngTaskBoard">here</a>.</p>
+                    <img class="project-images" src="images/taskBProj.PNG" alt="Image of Task Board Project"/>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showProjects(){
+                var mainContent = document.querySelector(".main-content");
+                var projectContent = document.querySelector(".project-content");
+                if(mainContent.style.display == "none"){
+                    projectContent.style.display = "none";
+                     mainContent.style.display = "block";
+                }else{
+                    mainContent.style.display = "none";
+                    projectContent.style.display = "block";
+                }
+                
+            }
+        </script>
+    </body>
+</html>
